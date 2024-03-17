@@ -7,6 +7,9 @@ const blogBox = document.querySelector('div');
 const heading = document.querySelector('h1');
 const backButton = document.getElementById('back');
 const body = document.querySelector('body');
+const footer = document.querySelector('footer');
+const footerText = document.querySelector('footer p');
+const footerButton = document.querySelector('footer button');
 
 function light() {
     page.setAttribute('style','background-color: white;');
@@ -17,18 +20,14 @@ function light() {
     body.setAttribute('style','background-color: white;');
     heading.setAttribute('style','background-color: white; color: black; border-bottom: dashed black 3px;');
     modeButton.setAttribute('style','background-color: white; color: black;');
-    backButton.setAttribute('style', 'background-color: white; color: black;')
+    backButton.setAttribute('style', 'background-color: white; color: black;');
+    footer.setAttribute('style', 'background-color: white; color: black;');
+    footerText.setAttribute('style', 'background-color: white; color: black;');
+    footerButton.setAttribute('style','background-color: white; color: black;');
     document.getElementById('light-switch').innerHTML = "Light Mode";
 }
 
 function renderBlog() {
-    const newTitle = titleDisplay.cloneNode(true);
-    body.append(newTitle);
-    const newContent = contentDisplay.cloneNode(true);
-    body.append(newContent);
-    const newUsername = usernameDisplay.cloneNode(true);
-    body.append(newUsername);
-
     const retrieveBlog = JSON.parse(localStorage.getItem('blog'));
     console.log(retrieveBlog);
 
@@ -53,4 +52,10 @@ modeButton.addEventListener('click', function (event) {
     } else {
         location.reload();
     }
+});
+
+footerButton.addEventListener('click', function (event) {
+    event.preventDefault();
+    
+    window.location.href = 'https://pauldsherrill.github.io/homework-2/';
 });

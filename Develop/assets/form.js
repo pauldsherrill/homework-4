@@ -11,10 +11,6 @@ function createBlog() {
     };
 
     localStorage.setItem('blog', JSON.stringify(blog));
-
-    usernameInput.textContent = "";
-    titleInput.textContent = "";
-    usernameInput.textContent = "";
 }
 
 function renderMessage(){
@@ -24,8 +20,9 @@ function renderMessage(){
 submitButton.addEventListener('click', function (event) {
     event.preventDefault();
 
-    if (usernameInput.value || titleInput.value || contentInput.value !== null) {
+    if (usernameInput.value !== "" || titleInput.value !== "" || contentInput.value !== "") {
         createBlog();
+        window.location.href = './blog.html';
     } else {
         renderMessage();
     }

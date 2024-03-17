@@ -34,6 +34,18 @@ div {
     padding-left: 20px;
 }
 
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+}
+
+footer p {
+    margin: 5px;
+}
+
+
 #content {
     display: flex;
     flex-wrap: wrap;
@@ -61,5 +73,6 @@ div {
     margin-top: 10px;
     font-size: 150%;
 }
+
 
 
