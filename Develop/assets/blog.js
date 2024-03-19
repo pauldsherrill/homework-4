@@ -3,8 +3,8 @@ const titleDisplay = document.getElementById('title');
 const contentDisplay = document.getElementById('content');
 const modeButton = document.getElementById('light-switch');
 const page = document.querySelector('*');
-const blogBox = document.querySelector('div');
 const heading = document.querySelector('h1');
+const blogBox = document.querySelector('div');
 const backButton = document.getElementById('back');
 const body = document.querySelector('body');
 const footer = document.querySelector('footer');
@@ -12,11 +12,11 @@ const footerText = document.querySelector('footer p');
 const footerButton = document.querySelector('footer button');
 const container = document.getElementById('blogs');
 
-
 function renderBlog() {
     const blogs = JSON.parse(localStorage.getItem('blog'));
     for (const blog of blogs) {
         console.log(blog)
+
         const blogElement = document.createElement('div');
         container.appendChild(blogElement);
         
@@ -42,7 +42,6 @@ function light() {
     usernameDisplay.setAttribute('style','background-color: white; color: black;');
     titleDisplay.setAttribute('style','background-color: white; color: black;');
     contentDisplay.setAttribute('style','background-color: white; color: black;');
-    blogBox.setAttribute('style','background-color: white; color: black; border: solid black 3px;');
     body.setAttribute('style','background-color: white;');
     heading.setAttribute('style','background-color: white; color: black; border-bottom: dashed black 3px;');
     modeButton.setAttribute('style','background-color: white; color: black;');
@@ -50,8 +49,16 @@ function light() {
     footer.setAttribute('style', 'background-color: white; color: black;');
     footerText.setAttribute('style', 'background-color: white; color: black;');
     footerButton.setAttribute('style','background-color: white; color: black;');
+    blogBox.setAttribute('style','background-color: white; color: black; border: solid black 3px;');
     container.setAttribute('style','background-color: white; color: black;');
     document.getElementById('light-switch').innerHTML = "Light Mode";
+
+    for (let i = 0; i < container.children.length; i++) {
+        container.children[i].setAttribute('style','background-color: white; color: black; border: solid black 3px;');
+        container.children[i].children[0].setAttribute('style','background-color: white; color: black;');
+        container.children[i].children[1].setAttribute('style','background-color: white; color: black;');
+        container.children[i].children[2].setAttribute('style','background-color: white; color: black;');
+    }
 }
 
 function init() {
