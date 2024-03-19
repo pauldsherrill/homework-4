@@ -1,127 +1,42 @@
-# 04 Web APIs: Personal Blog
+# Personal Blog
 
-## Your Task
+## Description
 
-In this challenge, you'll create a two-page website where users will input and view blog posts. It includes building a content form, dynamically rendering blog posts, and implementing a light/dark mode toggle. As you code, you'll gain practical JavaScript experience, explore the Document Object Model's power, and set the stage for more advanced tasks.
+In this challenge, I was tasked with creating a two page website to submit and store blog posts. For the first page, I had to create a form where the user could submit a username, a title for their blog post, and the actual content in that post. When submitted, they were to be taken to the second page where their new post could be seen among any previous posts that were already created. If the form had any inputs left empty, a prompt was to pop up to tell them to fill in the form. On the next page, I was tasked with adding a light switch to make the page lighter or darker when pressed, a back button to bring them to the previous form page when clicked, and a link to my portfolio in the footer. 
 
-## User Story
+## Installation
 
-```md
-AS A marketing student,
-I WANT a personal blog
-SO THAT I can showcase my thoughts and experiences.
-```
+To install my code, I started with making the html file for the first page. I added a header as well as the input elements with labels to describe what to put in each one and unique IDs for each element. I then added a button called 'submit' to allow the user to submit the inputted information. 
 
-## Acceptance Criteria
+After finishing the html, I then created the js file for it. On this file, I started by using querySelectors to grab each input element to manipulate. From there, I created a function to store the inputted information into the local storage for later use by creating a variable containing all the values of the input elements and using JSON to set the elements into the local storage. I then created a function that would render a message when inputs were empty. I then used an if statement within an event listener so that if any inputs were left empty the message would render else the function to store the inputted information would run as well as redirect the user to the next page. 
 
-```md
-GIVEN a personal blog
-WHEN I load the app,
-THEN I am presented with the landing page containing a form with labels and inputs for username, blog title, and blog content.
-WHEN I submit the form,
-THEN blog post data is stored to localStorage.
-WHEN the form submits,
-THEN I am redirected to the posts page.
-WHEN I enter try to submit a form without a username, title, or content,
-THEN I am presented with a message that prompts me to complete the form.
-WHEN I view the posts page,
-THEN I am presented with a header, with a light mode/dark mode toggle, and a "Back" button.
-WHEN I click the light mode/dark mode toggle,
-THEN the page content's styles update to reflect the selection.
-WHEN I click the "Back" button,
-THEN I am redirected back to the landing page where I can input more blog entries.
-WHEN I view the main content,
-THEN I am presented with a list of blog posts that are pulled from localStorage.
-WHEN I view localStorage,
-THEN I am presented with a JSON array of blog post objects, each including the post author's username, title of the post, and post's content.
-WHEN I take a closer look at a single blog entry in the list,
-THEN I can see the title, the content, and the author of the post.
-WHEN I view the footer,
-THEN I am presented with a link to the developer's portfolio.
-```
+I then added all of my positioning and styling using a CSS sheet. There, I was able to position my labels above my inputs as well as make my page darker. I also added :hover styling to make the page look more responsive to the user.
 
-## Getting Started
+After that, it was time to make the next page. I once again started with the html file with a header and then added a mock blog post to label where each element of the input would go. I also added button elements at various parts of the html to add all the buttons I needed (back, light switch, and portfolio link). 
 
-Your file structure should look like the following:
+Before moviong onto the js file for this, I thought it would be easier to go ahead and position my page and style it using another CSS sheet. I added similar styling as the previous page to make it look together and complete. The main thing I focued on however was the positioning of my buttons and blog containers as well as the elemetns within those containers. 
 
-```md
-my-blog
-├── assets
-│   ├── css
-│   │   ├── blog.css
-│   │   ├── form.css
-│   │   └── styles.css
-│   └── js
-│       ├── blog.js
-│       ├── form.js
-│       └── logic.js
-├── index.html
-├── blog.html
-└── README.md
-```
+Once finished with my styling, it was time to create the logic behind the page. The first step was to get my stored input onto the page by using JSON once again to get the local storage objects. I then had to display it onto the page. I did this by grabbing the container element in my html using a query selector and creating a new 'div' element and appending it into that container. I then had to append child elements into that 'div' and make their text content equal to the content in the local storage one by one. To make it look the same as the mock blog, I set their ID's to match that of each of the elements of that mock blog and the CSS sheet did the rest. My next plan of action was to create the light switch. I did  this by creating a function called 'light' that set attributes to all of the elements on the page to the opposite of the dark styling they had before. To make this function usable I created an event listener 
+on the button so that each time the button was pressed the function would run and add a number to a variable that equaled to zero. I used an if statement to state that if that variable was not zero and the button was pressed, th epage would refresh and go back to its default styling. This made it so that each time the button was pressed the styling of the page wouyld change to either light or dark. For the other buttons I simply used location redirectors within their event listeners to redirect the user to the pages they were suposed to take them to. 
 
-## Mock-Up
+## Usage
 
-The following animation demonstrates the application functionality:
+To acces my website visit 
 
-![A user adds a blog through a form, then the post appears on the following page.](./Assets/100-web-apis-challenge-demo.gif)
+Once you arrive you will see the form where you can submit a username, title, and content. 
 
-## Grading Requirements
+![alt text](./Assets/emptyform.png)
 
-> **Note**: If a Challenge assignment submission is marked as “0”, it is considered incomplete and will not count towards your graduation requirements. Examples of incomplete submissions include the following:
->
-> * A repository that has no code
->
-> * A repository that includes a unique name but nothing else
->
-> * A repository that includes only a README file but nothing else
->
-> * A repository that only includes starter code
+If submitted when the from was not filled completely, you will be prompted to fill in the form.  
 
-This Challenge is graded based on the following criteria:
+![alt text](./Assets/message.png)
 
-### Technical Acceptance Criteria: 40%
+Otherwise, you will be redirected to a page where your blog is. 
 
-* Satisfies all of the preceding acceptance criteria.
+![alt text](./Assets/blogs.png)
 
-### Deployment: 32%
+On this page you will notice two buttons at the top. If the back button (button with arrow) is clicked, you will be taken back to the form page wqhere you can submit another blog post. If the button 'dark mode' is clicked the screen will become light and the button will be titled 'light mode'. If that is clicked again, the screen will return to dark mode. 
 
-* Application deployed at live URL.
+[Insert light mode screenshot]
 
-* Application loads with no errors.
-
-* Application GitHub URL submitted.
-
-* GitHub repository contains application code.
-
-### Application Quality: 15%
-
-* Application user experience is intuitive and easy to navigate.
-
-* Application user interface style is clean and polished.
-
-* Application resembles the mock-up functionality provided in the Challenge instructions.
-
-### Repository Quality: 13%
-
-* Repository has a unique name.
-
-* Repository follows best practices for file structure and naming conventions.
-
-* Repository follows best practices for class/id naming conventions, indentation, quality comments, etc.
-
-* Repository contains multiple descriptive commit messages.
-
-* Repository contains quality readme file with description, screenshot, and link to deployed application.
-
-## Review
-
-You are required to submit BOTH of the following for review:
-
-* The URL of the functional, deployed application.
-
-* The URL of the GitHub repository, with a unique name and a readme describing the project.
-
----
-
-© 2024 edX Boot Camps LLC. Confidential and Proprietary. All Rights Reserved.
+At the bottom of the page, you will see a footer containing a link to my portfolio. By clicking on that link, you will be redirected to my portfolio and will be able to view my other projects.
