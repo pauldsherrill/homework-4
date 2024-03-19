@@ -15,14 +15,6 @@ h1 {
     padding-top: 10px;
 }
 
-h2 {
-    display: flex;
-    justify-content: left;
-    font-size: 150%;
-    margin-bottom: 5px;
-    font-style: underline;
-}
-
 div {
     display: flex;
     flex-direction: column;
@@ -45,6 +37,13 @@ footer p {
     margin: 5px;
 }
 
+#title {
+    display: flex;
+    justify-content: left;
+    font-size: 150%;
+    margin-bottom: 5px;
+    font-style: underline;
+}
 
 #content {
     display: flex;
@@ -74,5 +73,17 @@ footer p {
     font-size: 150%;
 }
 
+#light-switch:hover {
+    cursor: grab;
+    font-size: 85%;
+}
 
+#back:hover {
+    cursor: grab;
+    font-size: 160%;
+}
 
+footer button:hover {
+    cursor: grab;
+    font-size: 85%;
+}

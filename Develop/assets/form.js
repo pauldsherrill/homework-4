@@ -10,7 +10,15 @@ function createBlog() {
         content: contentInput.value.trim(),
     };
 
-    localStorage.setItem('blog', JSON.stringify(blog));
+    const blogs = JSON.parse(localStorage.getItem('blog'));
+
+    if (blogs) {
+        blogs.push(blog);
+        localStorage.setItem('blog', JSON.stringify(blogs));
+    } else {
+        const blogsInitializer = [blog];
+        localStorage.setItem('blog', JSON.stringify(blogsInitializer));
+    }
 }
 
 function renderMessage(){
@@ -20,11 +28,11 @@ function renderMessage(){
 submitButton.addEventListener('click', function (event) {
     event.preventDefault();
 
-    if (usernameInput.value !== "" || titleInput.value !== "" || contentInput.value !== "") {
+    if (usernameInput.value === "" || titleInput.value === "" || contentInput.value === "") {
+        renderMessage();
+    } else {
         createBlog();
         window.location.href = './blog.html';
-    } else {
-        renderMessage();
     }
 });
 

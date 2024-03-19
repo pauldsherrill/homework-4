@@ -10,6 +10,32 @@ const body = document.querySelector('body');
 const footer = document.querySelector('footer');
 const footerText = document.querySelector('footer p');
 const footerButton = document.querySelector('footer button');
+const container = document.getElementById('blogs');
+
+
+function renderBlog() {
+    const blogs = JSON.parse(localStorage.getItem('blog'));
+    for (const blog of blogs) {
+        console.log(blog)
+        const blogElement = document.createElement('div');
+        container.appendChild(blogElement);
+        
+        const blogTitle = document.createElement('h2');
+        blogTitle.id = "title";
+        blogTitle.textContent = blog.title;
+        blogElement.appendChild(blogTitle);
+
+        const blogContent = document.createElement('p');
+        blogContent.id = "content";
+        blogContent.textContent = blog.content;
+        blogElement.appendChild(blogContent);
+
+        const blogUsername = document.createElement('p');
+        blogUsername.id = "username";
+        blogUsername.textContent = blog.username;
+        blogElement.appendChild(blogUsername);
+    }
+}
 
 function light() {
     page.setAttribute('style','background-color: white;');
@@ -24,16 +50,8 @@ function light() {
     footer.setAttribute('style', 'background-color: white; color: black;');
     footerText.setAttribute('style', 'background-color: white; color: black;');
     footerButton.setAttribute('style','background-color: white; color: black;');
+    container.setAttribute('style','background-color: white; color: black;');
     document.getElementById('light-switch').innerHTML = "Light Mode";
-}
-
-function renderBlog() {
-    const retrieveBlog = JSON.parse(localStorage.getItem('blog'));
-    console.log(retrieveBlog);
-
-    usernameDisplay.innerHTML = retrieveBlog.username;
-    titleDisplay.innerHTML = retrieveBlog.title;
-    contentDisplay.innerHTML = retrieveBlog.content;
 }
 
 function init() {
