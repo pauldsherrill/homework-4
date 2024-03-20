@@ -22,18 +22,18 @@ Once finished with my styling, it was time to create the logic behind the page. 
 
 Once you arrive to my website you will see the form where you can submit a username, title, and content. 
 
-![alt text](./emptyform.png)
+![alt text](./Assets/emptyform.png)
 
 If submitted when the from was not filled completely, you will be prompted to fill in the form.  
 
-![alt text](./message.png)
+![alt text](./Assets/message.png)
 
 Otherwise, you will be redirected to a page where your blog is. 
 
-![alt text](./blogs.png)
+![alt text](./Assets/blogs.png)
 
 On this page you will notice two buttons at the top. If the back button (button with arrow) is clicked, you will be taken back to the form page wqhere you can submit another blog post. If the button 'dark mode' is clicked the screen will become light and the button will be titled 'light mode'. If that is clicked again, the screen will return to dark mode. 
 
-![alt text](./lightmode.png)
+![alt text](./Assets/lightmode.png)
 
 At the bottom of the page, you will see a footer containing a link to my portfolio. By clicking on that link, you will be redirected to my portfolio and will be able to view my other projects.
