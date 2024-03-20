@@ -20,9 +20,7 @@ Once finished with my styling, it was time to create the logic behind the page. 
 
 ## Usage
 
-To acces my website visit 
-
-Once you arrive you will see the form where you can submit a username, title, and content. 
+Once you arrive to my website you will see the form where you can submit a username, title, and content. 
 
 ![alt text](./emptyform.png)
 
